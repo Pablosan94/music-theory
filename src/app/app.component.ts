@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'music-theory';
+  public isSidebarActive: boolean = false;
+
+  public onToggleSidebar(isSidebarActive: boolean) {
+    this.isSidebarActive = isSidebarActive;
+  }
 }

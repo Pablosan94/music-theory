@@ -1,0 +1,117 @@
+@import "../../../../../styles/variables";
+
+:host {
+  width: min-content;
+}
+
+a {
+  overflow: hidden;
+  text-decoration: none;
+}
+
+@media(max-width: $mobile-max-width) {
+  .container {
+    align-items: center;
+    border-radius: .25rem;
+    cursor: pointer;
+    display: flex;
+    flex-flow: column;
+    padding: .25rem;
+    transition: all 500ms ease;
+
+    &:hover {
+      background-color: $grey-800;
+    }
+  }
+
+  .img {
+    color: $grey-600;
+  }
+
+  .text {
+    color: $grey-600;
+    font-size: 9px;
+  }
+
+  .container:hover .img {
+    color: $grey-400;
+  }
+
+  .container:hover .text {
+    color: $grey-400;
+  }
+
+  .container:hover {
+    opacity: 1;
+    transition: all 500ms ease;
+    top: 50%;
+  }
+
+  .tooltip {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+}
+
+@media(min-width: $desktop-min-width) {
+  .container {
+    align-items: center;
+    border-radius: .75rem;
+    cursor: pointer;
+    display: flex;
+    padding: .75rem;
+    transition: all 500ms ease;
+
+    &:hover {
+      background-color: $grey-800;
+    }
+  }
+
+  .img {
+    color: $grey-600;
+    margin-right: .75rem;
+  }
+
+  .text {
+    color: $grey-600;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+  .text-active {
+    opacity: 1;
+    transition: opacity 500ms ease;
+  }
+
+  .container:hover .img {
+    color: $grey-400;
+  }
+
+  .container:hover .text {
+    color: $grey-400;
+  }
+
+  .container:hover {
+    opacity: 1;
+    transition: all 500ms ease;
+    top: 50%;
+  }
+
+  .tooltip {
+    background-color: $grey-900;
+    border-radius: .75rem;
+    box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.2);
+    left: 70px;
+    line-height: 32px;
+    height: 32px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transform: translateY(-50%);
+    transition: 0s;
+    width: 112px;
+  }
+}

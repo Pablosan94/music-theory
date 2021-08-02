@@ -1,0 +1,24 @@
+@import "./src/styles/variables";
+
+@media(max-width: $mobile-max-width) {
+  .main {
+    padding-top: $sidebar-inactive-width;
+    transition: padding-top 500ms ease;
+  }
+}
+
+@media(min-width: $desktop-min-width) {
+  .main {
+    padding-left: $sidebar-inactive-width;
+    transition: padding-left 500ms ease;
+  }
+
+  .main.active {
+    padding-left: $sidebar-active-width;
+  }
+}
+
+.bg {
+  max-width: 100vw;
+}
+
