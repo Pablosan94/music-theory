@@ -1,3 +1,20 @@
+@import "/src/styles/variables";
+
 .dashboard {
+  display: flex;
+  flex-flow: column;
   padding: 1rem;
+
+  .most_recent {
+    .title {
+      color: $dark-800;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 }

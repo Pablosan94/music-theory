@@ -4,13 +4,26 @@ $sidebar-active-width: 220px;
 $mobile-max-width: 479px;
 $desktop-min-width: 480px;
 
-$grey-100: hsl(0, 0%, 10%);
-$grey-200: hsl(0, 0%, 20%);
-$grey-300: hsl(0, 0%, 30%);
-$grey-400: hsl(0, 0%, 40%);
-$grey-500: hsl(0, 0%, 50%);
-$grey-600: hsl(0, 0%, 60%);
-$grey-700: hsl(0, 0%, 70%);
-$grey-800: hsl(0, 0%, 80%);
-$grey-900: hsl(0, 0%, 90%);
-$grey-1000: hsl(0, 0%, 100%);
+// Dark mode colors
+$dark-100: hsl(0, 0%, 10%);
+$dark-200: hsl(0, 0%, 20%);
+$dark-300: hsl(0, 0%, 30%);
+$dark-400: hsl(0, 0%, 40%);
+$dark-500: hsl(0, 0%, 50%);
+$dark-600: hsl(0, 0%, 60%);
+$dark-700: hsl(0, 0%, 70%);
+$dark-800: hsl(0, 0%, 80%);
+$dark-900: hsl(0, 0%, 90%);
+$dark-1000: hsl(0, 0%, 100%);
+
+// Light mode colors
+$light-100: hsl(220, 20%, 100%);
+$light-200: hsl(220, 10%, 90%);
+$light-300: hsl(220, 20%, 80%);
+$light-400: hsl(220, 20%, 70%);
+$light-500: hsl(220, 20%, 60%);
+$light-600: hsl(220, 20%, 50%);
+$light-700: hsl(220, 20%, 40%);
+$light-800: hsl(220, 20%, 30%);
+$light-900: hsl(220, 20%, 20%);
+$light-1000: hsl(220, 20%, 10%);

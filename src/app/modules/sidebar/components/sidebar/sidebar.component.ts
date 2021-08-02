@@ -1,6 +1,6 @@
 import {Component, EventEmitter, HostListener, OnInit, Output, ViewChild} from '@angular/core';
 
-import { MIN_DESKTOP_WIDTH } from "shared/constants";
+import { MIN_DESKTOP_WIDTH } from "@shared/constants";
 
 @Component({
   selector: 'app-sidebar',

@@ -1,6 +1,6 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 
-import { MIN_DESKTOP_WIDTH } from 'shared/constants';
+import { MIN_DESKTOP_WIDTH } from '@shared/constants';
 
 @Component({
   selector: 'app-sidebar-link',

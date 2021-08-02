@@ -12,7 +12,7 @@
         (click)="onSearchClick()">
       <i class="bx bx-sm bx-search search_icon" [class.search_icon-active]="isSidebarActive"></i>
       <input class="search_input" type="text" placeholder="Search..." *ngIf="isSidebarActive">
-      <span class="tooltip" [ngStyle]="tooltipStyle">Search</span>
+      <span class="tooltip" [ngStyle]="tooltipStyle" *ngIf="!isSidebarActive">Search</span>
     </li>
     <li>
       <app-sidebar-link text="Dashboard" icon="bx-grid-alt" href="dashboard" [isSidebarActive]="isSidebarActive"></app-sidebar-link>

@@ -1,0 +1,35 @@
+@import "/src/styles/variables";
+
+.card {
+  background-color: $dark-200;
+  border-radius: 1rem;
+  color: $dark-600;
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  height: auto;
+  min-height: 100px;
+  padding: .75rem;
+  margin-right: .75rem;
+  margin-top: .75rem;
+  width: 400px;
+
+  &:hover {
+    background-color: $dark-900;
+    color: $dark-400;
+    transition: all 500ms ease;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: .5rem;
+  }
+
+  .description {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

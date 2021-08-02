@@ -1,19 +1,15 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import {DashboardComponent} from "./modules/dashboard/components";
-import {ExercisesComponent} from "./modules/exercises/components";
 import {HomeComponent} from "./modules/home/components";
-import {LessonsComponent} from "./modules/lessons/components";
-import {SettingsComponent} from "./modules/settings/components";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'exercises', component: ExercisesComponent },
-  { path: 'lessons', component: LessonsComponent },
-  { path: 'settings', component: SettingsComponent }
+  { path: 'dashboard', loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'exercises', loadChildren: () => import('./modules/exercises/exercises.module').then(m => m.ExercisesModule) },
+  { path: 'lessons', loadChildren: () => import('./modules/lessons/lessons.module').then(m => m.LessonsModule) },
+  { path: 'settings', loadChildren: () => import('./modules/settings/settings.module').then(m => m.SettingsModule) }
 ];
 
 @NgModule({
