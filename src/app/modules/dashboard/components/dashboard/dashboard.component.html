@@ -1,27 +1,28 @@
+<app-searchbar (onSearch)="onSearch($event)"></app-searchbar>
 <div class="dashboard">
-  <div class="most_recent">
-    <div class="title">Most recent</div>
+  <div class="favorites">
+    <div class="title">Favorites</div>
     <div class="cards">
-      <app-card
-        title="Major scale"
-        description="Learn how to build and use the Major scale."
-      ></app-card>
-
-      <app-card
-        title="Pentatonic scale"
-        description="Learn how to build and use the Pentatonic scale."
-      ></app-card>
-
-      <app-card
-        title="The Modes"
-        description="Learn how to build and use the Modes."
-      ></app-card>
-
-      <app-card
-        title="Triads"
-        description="Learn how to build and use basic triads."
-      ></app-card>
+      <app-card *ngFor="let card of favorites"
+                [title]="card.title"
+                [description]="card.description"
+                [tags]="card.tags"
+                [tone]="card.tone"
+                (click)="onCardClick(card.title)">
+      </app-card>
     </div>
   </div>
 
+  <div class="most_recent">
+    <div class="title">Most recent</div>
+    <div class="cards">
+      <app-card *ngFor="let card of mostRecent"
+                [title]="card.title"
+                [description]="card.description"
+                [tags]="card.tags"
+                [tone]="card.tone"
+                (click)="onCardClick(card.title)">
+      </app-card>
+    </div>
+  </div>
 </div>

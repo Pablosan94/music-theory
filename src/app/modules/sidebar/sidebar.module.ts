@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import {SidebarComponent, SidebarLinkComponent} from "./components";
 import {AppRoutingModule} from "../../app-routing.module";
+import { SidebarContainerComponent } from './components/sidebar-container/sidebar-container.component';
 
 @NgModule({
   imports: [
@@ -11,11 +12,13 @@ import {AppRoutingModule} from "../../app-routing.module";
   ],
   declarations: [
     SidebarComponent,
-    SidebarLinkComponent
+    SidebarLinkComponent,
+    SidebarContainerComponent
   ],
   exports: [
     SidebarComponent,
-    SidebarLinkComponent
+    SidebarLinkComponent,
+    SidebarContainerComponent
   ]
 })
 export class SidebarModule { }

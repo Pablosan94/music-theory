@@ -158,10 +158,15 @@
 
     #menu {
       color: $dark-600;
+      cursor: pointer;
       left: 30%;
       position: absolute;
       top: .75rem;
       transition: left 400ms ease;
+
+      &:hover {
+        color: $dark-900;
+      }
     }
 
     .nav_list {
@@ -251,10 +256,15 @@
 
     #menu {
       color: $dark-600;
+      cursor: pointer;
       left: 83%;
       position: absolute;
       top: .75rem;
       transition: left 400ms ease;
+
+      &:hover {
+        color: $dark-900;
+      }
     }
 
     .nav_list {
@@ -324,7 +334,7 @@
     }
   }
 
-  .profile_container {
+  /*.profile_container {
     bottom: 0;
     margin-bottom: 1.5rem;
     position: absolute;
@@ -374,7 +384,7 @@
         }
       }
     }
-  }
+  }*/
 }
 
 

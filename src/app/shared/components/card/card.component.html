@@ -1,8 +1,17 @@
 <div class="card">
-  <div class="title">
-    {{ title }}
+  <div class="card-text">
+    <div class="title">
+      {{ title }}
+      <div class="tags" *ngIf="tags">
+        <app-tag *ngFor="let tag of tags" [tag]="tag"></app-tag>
+      </div>
+    </div>
+    <div class="description">
+      {{ description }}
+    </div>
   </div>
-  <div class="description">
-    {{ description }}
-  </div>
+  <ng-container *ngIf="tone">
+    <i class="bx bx-play-circle play-icon" *ngIf="!isPlaying()" (click)="play(); $event.stopPropagation()"></i>
+    <i class="bx bx-stop-circle stop-icon" *ngIf="isPlaying()" (click)="stop(); $event.stopPropagation()"></i>
+  </ng-container>
 </div>

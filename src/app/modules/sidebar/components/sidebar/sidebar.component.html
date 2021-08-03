@@ -1,19 +1,19 @@
-<nav class="sidebar" #sidebar>
+<nav class="sidebar" [ngClass]="palette" #sidebar>
   <div class="logo">
     <i class="bx bx-lg bx-headphone"></i>
-    <div class="logo_name" [class.logo_name-active]="isSidebarActive">MusicTheory</div>
+    <div class="logo_name" [class.logo_name-active]="isSidebarActive" *ngIf="isSidebarActive">MusicTheory</div>
   </div>
   <i class="bx bx-sm bx-menu" id="menu" (click)="onMenuClick()"></i>
 
   <ul class="nav_list">
-    <li class="search" *ngIf="!isMobile"
+    <!--<li class="search" *ngIf="!isMobile"
         (mouseover)="onMouseOver()"
         (mouseout)="onMouseOut()"
         (click)="onSearchClick()">
       <i class="bx bx-sm bx-search search_icon" [class.search_icon-active]="isSidebarActive"></i>
       <input class="search_input" type="text" placeholder="Search..." *ngIf="isSidebarActive">
       <span class="tooltip" [ngStyle]="tooltipStyle" *ngIf="!isSidebarActive">Search</span>
-    </li>
+    </li>-->
     <li>
       <app-sidebar-link text="Dashboard" icon="bx-grid-alt" href="dashboard" [isSidebarActive]="isSidebarActive"></app-sidebar-link>
     </li>

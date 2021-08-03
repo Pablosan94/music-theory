@@ -1,10 +1,16 @@
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
 
-import {LessonsComponent} from "./components";
+import {LessonComponent, LessonsComponent} from "./components";
 
 const routes: Routes = [
-  { path: '', component: LessonsComponent },
+  {
+    path: '',
+    component: LessonsComponent,
+    children: [
+      { path: ':lesson', component: LessonComponent }
+    ]
+  }
 ];
 
 @NgModule({

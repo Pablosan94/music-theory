@@ -1,0 +1,20 @@
+@import "src/styles/variables";
+
+.tag {
+  border-radius: 0.5rem;
+  font-size: 12px;
+  line-height: 12px;
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
+  padding: 0.25rem 0.25rem;
+
+  &.chords {
+    background: $tag-chords;
+    color: $dark-200;
+  }
+
+  &.scales {
+    background: $tag-scales;
+    color: $dark-900;
+  }
+}

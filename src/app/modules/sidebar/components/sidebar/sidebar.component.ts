@@ -1,6 +1,8 @@
-import {Component, EventEmitter, HostListener, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnInit, Output, ViewChild} from '@angular/core';
 
 import { MIN_DESKTOP_WIDTH } from "@shared/constants";
+import {PaletteTypesEnum} from "@shared/enums";
+import {isMobileWidth} from "@shared/utils/window.utils";
 
 @Component({
   selector: 'app-sidebar',
@@ -10,6 +12,8 @@ import { MIN_DESKTOP_WIDTH } from "@shared/constants";
 export class SidebarComponent implements OnInit {
   @ViewChild('sidebar') nav: any;
 
+  @Input() public palette: PaletteTypesEnum;
+
   @Output() onToggleNav: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public isMobile: boolean = false;
@@ -18,13 +22,13 @@ export class SidebarComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.checkMobile(event.target.innerWidth);
+    this.isMobile = isMobileWidth(event.target.innerWidth);
   }
 
   constructor() { }
 
   ngOnInit(): void {
-    this.checkMobile(window.innerWidth);
+    this.isMobile = isMobileWidth(window.innerWidth);
   }
 
   public onMenuClick(): void {
@@ -53,9 +57,5 @@ export class SidebarComponent implements OnInit {
 
   public onMouseOut(): void {
     this.tooltipStyle = {};
-  }
-
-  private checkMobile(width: number) {
-    this.isMobile = width < MIN_DESKTOP_WIDTH;
   }
 }

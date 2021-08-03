@@ -1,7 +1,7 @@
 <a [routerLink]="href ? ['/' + href] : '/'">
   <div class="container" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
     <i class="bx bx-sm img" [ngClass]="icon"></i>
-    <span class="text" [class.text-active]="isSidebarActive">{{ text }}</span>
+    <span class="text" [class.text-active]="isSidebarActive" *ngIf="isSidebarActive">{{ text }}</span>
   </div>
 </a>
 <span class="tooltip" [ngStyle]="tooltipStyle" *ngIf="!isMobile">{{ text }}</span>

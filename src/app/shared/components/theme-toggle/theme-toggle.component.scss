@@ -1,0 +1,34 @@
+@import "src/styles/variables";
+
+@media(max-width: $mobile-max-width) {
+
+}
+
+@media(min-width: $desktop-min-width) {
+  i {
+    cursor: pointer;
+    font-size: 32px;
+    padding: 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .bx-sun {
+    color: $dark-800;
+
+    &:hover {
+      color: $dark-600;
+    }
+  }
+
+  .bx-moon {
+    color: $light-800;
+
+    &:hover {
+      color: $light-600;
+    }
+  }
+}
+
+

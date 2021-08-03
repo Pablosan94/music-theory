@@ -1,35 +1,120 @@
 @import "/src/styles/variables";
 
-.card {
-  background-color: $dark-200;
-  border-radius: 1rem;
-  color: $dark-600;
-  cursor: pointer;
-  display: flex;
-  flex-flow: column;
-  height: auto;
-  min-height: 100px;
-  padding: .75rem;
-  margin-right: .75rem;
-  margin-top: .75rem;
-  width: 400px;
-
-  &:hover {
-    background-color: $dark-900;
-    color: $dark-400;
-    transition: all 500ms ease;
+@media(max-width: $mobile-max-width) {
+  :host {
+    width: 100%;
   }
 
-  .title {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 24px;
-    margin-bottom: .5rem;
-  }
+  .card {
+    // align-items: center;
+    background-color: $dark-200;
+    border-radius: 1rem;
+    color: $dark-600;
+    cursor: pointer;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    min-height: 100px;
+    padding: .75rem;
+    margin-top: .75rem;
 
-  .description {
-    font-size: 14px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    .card-text {
+      display: flex;
+      flex-flow: column;
+    }
+
+    &:hover {
+      background-color: $dark-900;
+      color: $dark-400;
+      transition: all 500ms ease;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 24px;
+      margin-bottom: .5rem;
+    }
+
+    .description {
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .play-icon {
+      font-size: 32px;
+
+      &:hover {
+        color: $dark-300;
+      }
+    }
+
+    .stop-icon {
+      color: $dark-300;
+      font-size: 32px;
+    }
   }
 }
+
+@media(min-width: $desktop-min-width) {
+  .card {
+    align-items: center;
+    background-color: $dark-200;
+    border-radius: 1rem;
+    color: $dark-600;
+    cursor: pointer;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    min-height: 100px;
+    padding: .75rem;
+    margin-right: .75rem;
+    margin-top: .75rem;
+    width: 400px;
+
+    .card-text {
+      display: flex;
+      flex-flow: column;
+    }
+
+    &:hover {
+      background-color: $dark-900;
+      color: $dark-400;
+      transition: all 500ms ease;
+    }
+
+    .title {
+      display: flex;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 24px;
+      margin-bottom: .5rem;
+    }
+
+    .description {
+      font-size: 14px;
+      max-width: 95%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tags {
+      display: flex;
+    }
+
+    .play-icon {
+      font-size: 32px;
+
+      &:hover {
+        color: $dark-300;
+      }
+    }
+
+    .stop-icon {
+      color: $dark-300;
+      font-size: 32px;
+    }
+  }
+}
+

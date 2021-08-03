@@ -1,6 +1,7 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 
 import { MIN_DESKTOP_WIDTH } from '@shared/constants';
+import {isMobileWidth} from "@shared/utils/window.utils";
 
 @Component({
   selector: 'app-sidebar-link',
@@ -18,11 +19,11 @@ export class SidebarLinkComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.checkMobile(event.target.innerWidth);
+    this.isMobile = isMobileWidth(event.target.innerWidth);
   }
 
   ngOnInit(): void {
-    this.checkMobile(window.innerWidth);
+    this.isMobile = isMobileWidth(window.innerWidth);
   }
 
   public onMouseOver(): void {
@@ -37,9 +38,5 @@ export class SidebarLinkComponent implements OnInit {
 
   public onMouseOut(): void {
     this.tooltipStyle = {};
-  }
-
-  private checkMobile(width: number) {
-    this.isMobile = width < MIN_DESKTOP_WIDTH;
   }
 }

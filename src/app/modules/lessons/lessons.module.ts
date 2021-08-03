@@ -1,14 +1,17 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {LessonsComponent} from "./components";
+import {LessonsComponent, LessonComponent} from "./components";
+import {LessonsRoutingModule} from "./lessons-routing.module";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    LessonsRoutingModule
   ],
   declarations: [
-    LessonsComponent
+    LessonsComponent,
+    LessonComponent
   ],
   exports: [
     LessonsComponent

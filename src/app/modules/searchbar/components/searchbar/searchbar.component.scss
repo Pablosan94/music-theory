@@ -1,0 +1,56 @@
+@import "/src/styles/variables";
+
+@media(max-width: $mobile-max-width) {
+  .container {
+    align-items: center;
+    display: flex;
+    margin: 1rem 1rem 0 1rem;
+
+    .search_icon {
+      color: $dark-600;
+      font-size: 24px;
+      margin-left: 1rem;
+      position: absolute;
+    }
+
+    .search_input {
+      background-color: $dark-200;
+      color: $dark-1000;
+      border: none;
+      border-radius: .5rem;
+      font-size: 18px;
+      height: 48px;
+      padding-left: 3rem;
+      width: 100%;
+    }
+  }
+}
+
+@media(min-width: $desktop-min-width) {
+  .container {
+    align-items: center;
+    display: flex;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    width: 20%;
+
+    .search_icon {
+      color: $dark-600;
+      font-size: 24px;
+      margin-left: 1rem;
+      position: absolute;
+    }
+
+    .search_input {
+      background-color: $dark-200;
+      color: $dark-1000;
+      border: none;
+      border-radius: .5rem;
+      font-size: 18px;
+      height: 48px;
+      padding-left: 3rem;
+      width: 100%;
+    }
+  }
+}
