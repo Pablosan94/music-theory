@@ -8,21 +8,28 @@ import {StoreModule} from "@ngrx/store";
 import {uiFeatureName, uiReducer} from "@shared/state/ui/reducers";
 import {ToneService} from "@shared/services/tone/tone.service";
 import { TagComponent } from './components/tag/tag.component';
+import { DividerComponent } from './components/divider/divider.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import {dashboardFeatureName, dashboardReducer} from "../modules/dashboard/state/dashboard/reducers";
 
 @NgModule({
   imports: [
     CommonModule,
+    StoreModule.forFeature(dashboardFeatureName, dashboardReducer),
     StoreModule.forFeature(uiFeatureName, uiReducer)
   ],
   declarations: [
     CardComponent,
     ThemeToggleComponent,
     ThemeToggleContainerComponent,
-    TagComponent
+    TagComponent,
+    DividerComponent,
+    DropdownComponent
   ],
   exports: [
     CardComponent,
-    ThemeToggleContainerComponent
+    ThemeToggleContainerComponent,
+    DividerComponent
   ],
   providers: [
     ToneService

@@ -1,8 +1,7 @@
 import {Component, EventEmitter, HostListener, Input, OnInit, Output, ViewChild} from '@angular/core';
-
-import { MIN_DESKTOP_WIDTH } from "@shared/constants";
 import {PaletteTypesEnum} from "@shared/enums";
 import {isMobileWidth} from "@shared/utils/window.utils";
+import {DividerEnum} from "@shared/components/divider/divider.enum";
 
 @Component({
   selector: 'app-sidebar',
@@ -12,13 +11,12 @@ import {isMobileWidth} from "@shared/utils/window.utils";
 export class SidebarComponent implements OnInit {
   @ViewChild('sidebar') nav: any;
 
-  @Input() public palette: PaletteTypesEnum;
-
   @Output() onToggleNav: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public isMobile: boolean = false;
   public isSidebarActive: boolean = false;
   public tooltipStyle: any = {};
+  public DividerEnum = DividerEnum;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {

@@ -1,27 +1,27 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {DashboardComponent} from './components';
-import {DashboardRoutingModule} from "./dashboard-routing.module";
+import {LibraryComponent} from './components';
+import {LibraryRoutingModule} from "./library-routing.module";
 import {SharedModule} from "@shared/shared.module";
 import {SearchbarModule} from "../searchbar/searchbar.module";
-import {ExampleService} from "@shared/services/example/example.service";
+import {SearchService} from "@shared/services/search/search.service";
 
 @NgModule({
     imports: [
       CommonModule,
-      DashboardRoutingModule,
+      LibraryRoutingModule,
       SharedModule,
       SearchbarModule
     ],
   declarations: [
-    DashboardComponent
+    LibraryComponent
   ],
   exports: [
-    DashboardComponent
+    LibraryComponent
   ],
   providers: [
-    ExampleService
+    SearchService
   ]
 })
-export class DashboardModule { }
+export class LibraryModule { }

@@ -1,0 +1,27 @@
+@import "src/styles/variables";
+
+@media(max-width: $mobile-max-width) {
+  :host {
+    display: flex;
+  }
+
+  .vertical {
+    background-color: var(--divider-background-color);
+    margin: auto 0 auto 1rem;
+    height: 80%;
+    width: 1px;
+  }
+}
+
+@media(min-width: $desktop-min-width) {
+  :host {
+    display: flex;
+  }
+
+  .horizontal {
+    background-color: var(--divider-background-color);
+    margin: 0 auto 1rem auto;
+    height: 1px;
+    width: 80%;
+  }
+}

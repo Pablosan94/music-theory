@@ -1,0 +1,17 @@
+<app-searchbar (onSearch)="onSearch($event)"></app-searchbar>
+<div class="library">
+  <div class="results">
+    <div class="title">Sound Library</div>
+    <div class="cards">
+      <app-card *ngFor="let card of searchResults"
+                [title]="card.title | titlecase"
+                [description]="card.description"
+                [tags]="card.tags"
+                [tone]="card.tone"
+                [showFavorite]="true"
+                [canSaveRecent]="true"
+                [favorites]="favorites">
+      </app-card>
+    </div>
+  </div>
+</div>

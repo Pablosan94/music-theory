@@ -5,11 +5,17 @@
   flex-flow: column;
   padding: 1rem;
 
+  .empty {
+    color: var(--empty-color);
+    font-size: 48px;
+    text-align: center;
+  }
+
   .favorites {
     margin-bottom: 2rem;
 
     .title {
-      color: $dark-800;
+      color: var(--title-color);
       font-size: 32px;
       font-weight: 600;
     }
@@ -22,7 +28,7 @@
 
   .most_recent {
     .title {
-      color: $dark-800;
+      color: var(--title-color);
       font-size: 32px;
       font-weight: 600;
     }

@@ -1,9 +1,13 @@
-<nav class="sidebar" [ngClass]="palette" #sidebar>
+<nav class="sidebar" #sidebar>
   <div class="logo">
     <i class="bx bx-lg bx-headphone"></i>
     <div class="logo_name" [class.logo_name-active]="isSidebarActive" *ngIf="isSidebarActive">MusicTheory</div>
   </div>
-  <i class="bx bx-sm bx-menu" id="menu" (click)="onMenuClick()"></i>
+  <app-divider [orientation]="isMobile ? DividerEnum.VERTICAL : DividerEnum.HORIZONTAL"></app-divider>
+  <i class="bx bx-sm bx-menu"
+     id="menu"
+     (click)="onMenuClick()">
+  </i>
 
   <ul class="nav_list">
     <!--<li class="search" *ngIf="!isMobile"
@@ -22,6 +26,9 @@
     </li>
     <li>
       <app-sidebar-link text="Exercises" icon="bx-book" href="exercises" [isSidebarActive]="isSidebarActive"></app-sidebar-link>
+    </li>
+    <li>
+      <app-sidebar-link text="Library" icon="bx-library" href="library" [isSidebarActive]="isSidebarActive"></app-sidebar-link>
     </li>
     <li>
       <app-sidebar-link text="Settings" icon="bx-cog" href="settings" [isSidebarActive]="isSidebarActive"></app-sidebar-link>

@@ -1,7 +1,32 @@
 @import "src/styles/variables";
 
 @media(max-width: $mobile-max-width) {
+  i {
+    cursor: pointer;
+    font-size: 28px;
+    margin-left: 3rem;
+    padding: 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 11;
+  }
 
+  .bx-sun {
+    color: $dark-600;
+
+    &:hover {
+      color: $dark-800;
+    }
+  }
+
+  .bx-moon {
+    color: $light-400;
+
+    &:hover {
+      color: $light-600;
+    }
+  }
 }
 
 @media(min-width: $desktop-min-width) {
@@ -23,7 +48,7 @@
   }
 
   .bx-moon {
-    color: $light-800;
+    color: $light-400;
 
     &:hover {
       color: $light-600;

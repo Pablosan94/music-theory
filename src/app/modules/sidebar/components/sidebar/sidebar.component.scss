@@ -2,21 +2,21 @@
 
 @media(max-width: $mobile-max-width) {
   .sidebar {
-    background-color: $dark-200;
+    background-color: var(--sidebar-color);
     display: flex;
     height: $sidebar-inactive-width;
-    justify-content: space-between;
+    // justify-content: space-between;
     left: 0;
     padding: .5rem;
     position: fixed;
     top: 0;
     transition: all 500ms ease;
     width: 100%;
-    z-index: 9999;
+    z-index: 10;
 
     .logo {
       align-items: center;
-      color: $dark-600;
+      color: var(--icon-color);
       display: flex;
       font-weight: 600;
       text-align: center;
@@ -36,6 +36,7 @@
   .nav_list {
     align-items: center;
     display: flex;
+    margin-left: 1rem;
 
     li {
       list-style: none;
@@ -62,63 +63,11 @@
       }
     }
   }
-
-  .profile_container {
-    bottom: 0;
-    margin-bottom: 1.5rem;
-    position: absolute;
-
-    .profile {
-      display: flex;
-      flex-flow: column;
-
-      .logout {
-        align-items: center;
-        display: flex;
-        justify-items: flex-end;
-        margin-left: auto;
-
-        .logout_button {
-          align-items: center;
-          background-color: $dark-600;
-          box-shadow: none;
-          color: $dark-1000;
-          display: flex;
-          font-weight: 800;
-          border-radius: .5rem;
-          padding: .25rem;
-        }
-
-        i {
-          color: $dark-1000;
-          margin-left: .25rem;
-          text-align: right;
-        }
-      }
-
-      .details {
-        align-items: center;
-        display: flex;
-
-        img {
-          border: solid 2px $dark-1000;
-          border-radius: 100%;
-          margin-right: .5rem;
-          height: 48px;
-          width: 48px;
-        }
-
-        .name {
-          color: $dark-1000;
-        }
-      }
-    }
-  }
 }
 
 @media(min-width: $desktop-min-width) {
   .sidebar {
-    background-color: $dark-200;
+    background-color: var(--sidebar-color);
     display: flex;
     flex-flow: column;
     height: 100%;
@@ -130,14 +79,14 @@
     top: 0;
     transition: all 500ms ease;
     width: $sidebar-inactive-width;
-    z-index: 9999;
+    z-index: 10;
 
     .logo {
       align-items: center;
-      color: $dark-600;
+      color: var(--icon-color);
       display: flex;
       font-weight: 600;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       margin-top: .75rem;
       text-align: center;
 
@@ -157,7 +106,7 @@
     }
 
     #menu {
-      color: $dark-600;
+      color: var(--menu-color);
       cursor: pointer;
       left: 30%;
       position: absolute;
@@ -165,7 +114,7 @@
       transition: left 400ms ease;
 
       &:hover {
-        color: $dark-900;
+        color: var(--menu-hover-color);
       }
     }
 
@@ -188,7 +137,7 @@
         transition: all 500ms ease;
 
         .tooltip {
-          background-color: $dark-900;
+          background-color: var(--tooltip-background-color);
           border-radius: .75rem;
           box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.2);
           left: 70px;
@@ -225,7 +174,7 @@
   }
 
   .sidebar.active {
-    background-color: $dark-200;
+    background-color: var(--sidebar-color);
     display: flex;
     flex-flow: column;
     height: 100%;
@@ -238,11 +187,11 @@
     top: 0;
     transition: all 500ms ease;
     width: $sidebar-active-width;
-    z-index: 9999;
+    z-index: 10;
 
     .logo {
       align-items: center;
-      color: $dark-600;
+      color: var(--icon-color);
       display: flex;
       font-weight: 600;
       margin-bottom: 2rem;
@@ -255,7 +204,7 @@
     }
 
     #menu {
-      color: $dark-600;
+      color: var(--menu-color);
       cursor: pointer;
       left: 83%;
       position: absolute;
@@ -263,7 +212,7 @@
       transition: left 400ms ease;
 
       &:hover {
-        color: $dark-900;
+        color: var(--menu-hover-color);
       }
     }
 
@@ -287,7 +236,7 @@
         transition: all 500ms ease;
 
         .tooltip {
-          background-color: $dark-900;
+          background-color: var(--tooltip-background-color);
           border-radius: .75rem;
           box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.2);
           left: 70px;

@@ -1,0 +1,22 @@
+@import "/src/styles/variables";
+
+.library {
+  display: flex;
+  flex-flow: column;
+  padding: 1rem;
+
+  .results {
+    margin-bottom: 2rem;
+
+    .title {
+      color: var(--title-color);
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import * as Tone from 'tone'
 import {ToneModel} from "@shared/models";
 import {ToneTypesEnum} from "@shared/enums";
-import {CasioKeyboard} from "@shared/services/tone/samplers";
-import {EIGHTH_NOTE} from "@shared/constants";
+import {Piano} from "@shared/services/tone/samplers";
+import {DOTTED_EIGHTH_NOTE, EIGHTH_NOTE} from "@shared/constants";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class ToneService {
   private scaleTimeout: any;
 
   constructor() {
-    this.sampler = new Tone.Sampler(CasioKeyboard).toDestination();
+    this.sampler = new Tone.Sampler(Piano).toDestination();
   }
 
   public play(tone: ToneModel): void {
@@ -52,7 +52,7 @@ export class ToneService {
   }
 
   private chord(): void {
-    this.sampler.triggerAttackRelease(this.loadedTone.notes,'2n');
+    this.sampler.triggerAttackRelease(this.loadedTone.notes,'2m');
     this.chordTimeout = setTimeout(this.stop.bind(this), this.calculateTimeoutChord());
   }
 
@@ -68,6 +68,6 @@ export class ToneService {
     this.scaleTimeout = setTimeout(this.stop.bind(this), this.calculateTimeoutScale());
   }
 
-  private calculateTimeoutChord = (): number => (Tone.Transport.bpm.value / 60) * 0.5 * 1000;
-  private calculateTimeoutScale = (): number => this.loadedTone.notes.length * (Tone.Transport.bpm.value / 60) * EIGHTH_NOTE * 1000;
+  private calculateTimeoutChord = (): number => (Tone.Transport.bpm.value / 60) * 2 * 1000;
+  private calculateTimeoutScale = (): number => this.loadedTone.notes.length * (Tone.Transport.bpm.value / 60) * DOTTED_EIGHTH_NOTE * 1000;
 }

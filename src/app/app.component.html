@@ -1,4 +1,4 @@
-<app-sidebar-container (sidebarActive)="onSidebarActive($event)"></app-sidebar-container>
+<app-sidebar (onToggleNav)="onSidebarActive($event)"></app-sidebar>
 <app-theme-toggle-container></app-theme-toggle-container>
 <div class="main" [class.active]="isSidebarActive" [ngClass]="getPalette()">
   <router-outlet></router-outlet>

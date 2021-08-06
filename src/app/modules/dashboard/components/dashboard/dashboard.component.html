@@ -1,26 +1,33 @@
-<app-searchbar (onSearch)="onSearch($event)"></app-searchbar>
 <div class="dashboard">
-  <div class="favorites">
+  <div *ngIf="!favorites.length && !mostRecent.length">
+    <div class="empty">Nothing to display at the moment</div>
+  </div>
+
+
+  <div class="favorites" *ngIf="favorites.length">
     <div class="title">Favorites</div>
     <div class="cards">
       <app-card *ngFor="let card of favorites"
-                [title]="card.title"
+                [title]="card.title | titlecase"
                 [description]="card.description"
                 [tags]="card.tags"
                 [tone]="card.tone"
+                [showFavorite]="false"
                 (click)="onCardClick(card.title)">
       </app-card>
     </div>
   </div>
 
-  <div class="most_recent">
+  <div class="most_recent" *ngIf="mostRecent.length">
     <div class="title">Most recent</div>
     <div class="cards">
       <app-card *ngFor="let card of mostRecent"
-                [title]="card.title"
+                [title]="card.title | titlecase"
                 [description]="card.description"
                 [tags]="card.tags"
                 [tone]="card.tone"
+                [showFavorite]="false"
+                [canSaveRecent]="false"
                 (click)="onCardClick(card.title)">
       </app-card>
     </div>

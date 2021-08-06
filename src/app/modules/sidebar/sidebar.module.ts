@@ -1,24 +1,23 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 import {SidebarComponent, SidebarLinkComponent} from "./components";
 import {AppRoutingModule} from "../../app-routing.module";
-import { SidebarContainerComponent } from './components/sidebar-container/sidebar-container.component';
+import {SharedModule} from "@shared/shared.module";
 
 @NgModule({
   imports: [
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   declarations: [
     SidebarComponent,
-    SidebarLinkComponent,
-    SidebarContainerComponent
+    SidebarLinkComponent
   ],
   exports: [
     SidebarComponent,
-    SidebarLinkComponent,
-    SidebarContainerComponent
+    SidebarLinkComponent
   ]
 })
 export class SidebarModule { }

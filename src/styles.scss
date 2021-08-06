@@ -8,13 +8,66 @@
   padding: 0;
 }
 
-body.dark {
-  background-color: $dark-350;
-  margin: 0;
+.light {
+  --background-color: #{$light-200};
+  --card-background-color: #{$light-400};
+  --card-hover-background-color: #{$light-700};
+  --card-hover-icon-color: #{$light-400};
+  --card-icon-color: #{$light-600};
+  --card-icon-hover-color: #{$light-300};
+  --divider-background-color: #{$light-400};
+  --empty-color: #{$light-500};
+  --icon-color: #{$light-400};
+  --icon-hover-background-color: #{$light-700};
+  --icon-hover-color: #{$light-400};
+  --icon-active-background-color: #{$light-700};
+  --icon-active-color: #{$light-400};
+  --menu-color: #{$light-400};
+  --menu-hover-color: #{$light-600};
+  --search-background-color: #{$light-400};
+  --search-color: #{$light-600};
+  --sidebar-color: #{$light-100};
+  --text-color: #{$light-400};
+  --theme-toggle-color: #{$light-400};
+  --theme-toggle-hover-color: #{$light-600};
+  --title-color: #{$light-700};
+  --tooltip-background-color: #{$light-800};
+  --tooltip-box-shadow: 0 5px 10px hsla(0, 0%, 80%, 0.2);
+  --tooltip-color: #{$light-200};
 }
 
-body.light {
-  background-color: $light-200;
+.dark {
+  --background-color: #{$dark-350};
+  --card-background-color: #{$dark-200};
+  --card-hover-background-color: #{$dark-900};
+  --card-hover-icon-color: #{$dark-400};
+  --card-icon-color: #{$dark-600};
+  --card-icon-hover-color: #{$dark-300};
+  --divider-background-color: #{$dark-300};
+  --empty-color: #{$dark-500};
+  --icon-color: #{$dark-600};
+  --icon-hover-background-color: #{$dark-800};
+  --icon-hover-color: #{$dark-400};
+  --icon-active-background-color: #{$dark-800};
+  --icon-active-color: #{$dark-400};
+  --menu-color: #{$dark-600};
+  --menu-hover-color: #{$dark-900};
+  --search-background-color: #{$dark-200};
+  --search-color: #{$dark-600};
+  --sidebar-color: #{$dark-200};
+  --text-color: #{$dark-600};
+  --theme-toggle-color: #{$dark-800};
+  --theme-toggle-hover-color: #{$dark-600};
+  --title-color: #{$dark-800};
+  --tooltip-background-color: #{$dark-900};
+  --tooltip-box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.2);
+  --tooltip-color: #{$dark-100};
+}
+
+body {
+  background-color: var(--background-color);
+  height: 100%;
+  margin: 0;
 }
 
 ul {

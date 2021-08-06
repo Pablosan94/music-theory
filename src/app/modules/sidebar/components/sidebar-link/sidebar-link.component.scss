@@ -20,37 +20,58 @@ a {
     transition: all 500ms ease;
 
     &:hover {
-      background-color: $dark-800;
+      background-color: var(--icon-hover-background-color);
+      opacity: 1;
+      transition: all 500ms ease;
+      top: 50%;
+
+      >.img {
+        color: var(--icon-hover-color);
+      }
+
+      >.text {
+        color: var(--icon-hover-color);
+      }
+    }
+
+    &.active {
+      background-color: var(--icon-active-background-color);
+
+      >.img {
+        color: var(--icon-active-color);
+      }
+
+      >.text {
+        color: var(--icon-active-color);
+      }
     }
   }
 
   .img {
-    color: $dark-600;
+    color: var(--icon-color);
   }
 
   .text {
-    color: $dark-600;
+    color: var(--text-color);
     font-size: 9px;
   }
 
-  .container:hover .img {
-    color: $dark-400;
-  }
-
-  .container:hover .text {
-    color: $dark-400;
-  }
-
-  .container:hover {
-    opacity: 1;
-    transition: all 500ms ease;
-    top: 50%;
-  }
-
   .tooltip {
-    height: 0;
-    width: 0;
-    visibility: hidden;
+    background-color: var(--tooltip-background-color);
+    border-radius: .75rem;
+    box-shadow: var(--tooltip-box-shadow);
+    color: var(--tooltip-color);
+    line-height: 32px;
+    height: 32px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    left: -125%;
+    text-align: center;
+    top: 50%;
+    transition: 0s;
+    width: 112px;
+    z-index: 11;
   }
 }
 
@@ -64,17 +85,40 @@ a {
     transition: all 500ms ease;
 
     &:hover {
-      background-color: $dark-800;
+      background-color: var(--icon-hover-background-color);
+      opacity: 1;
+      transition: all 500ms ease;
+      top: 50%;
+
+      >.img {
+        color: var(--icon-hover-color);
+      }
+
+      >.text {
+        color: var(--icon-hover-color);
+      }
+    }
+
+    &.active {
+      background-color: var(--icon-active-background-color);
+
+      >.img {
+        color: var(--icon-active-color);
+      }
+
+      >.text {
+        color: var(--icon-active-color);
+      }
     }
   }
 
   .img {
-    color: $dark-600;
+    color: var(--icon-color);
     margin-right: .75rem;
   }
 
   .text {
-    color: $dark-600;
+    color: var(--text-color);
     opacity: 0;
     transition: opacity 200ms ease;
   }
@@ -84,24 +128,11 @@ a {
     transition: opacity 500ms ease;
   }
 
-  .container:hover .img {
-    color: $dark-400;
-  }
-
-  .container:hover .text {
-    color: $dark-400;
-  }
-
-  .container:hover {
-    opacity: 1;
-    transition: all 500ms ease;
-    top: 50%;
-  }
-
   .tooltip {
-    background-color: $dark-900;
+    background-color: var(--tooltip-background-color);
     border-radius: .75rem;
-    box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.2);
+    box-shadow: var(--tooltip-box-shadow);
+    color: var(--tooltip-color);
     left: 70px;
     line-height: 32px;
     height: 32px;

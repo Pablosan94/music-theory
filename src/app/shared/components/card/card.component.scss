@@ -6,10 +6,10 @@
   }
 
   .card {
-    // align-items: center;
-    background-color: $dark-200;
+    align-items: center;
+    background-color: var(--card-background-color);
     border-radius: 1rem;
-    color: $dark-600;
+    color: var(--card-icon-color);
     cursor: pointer;
     display: flex;
     height: auto;
@@ -24,13 +24,13 @@
     }
 
     &:hover {
-      background-color: $dark-900;
-      color: $dark-400;
+      background-color: var(--card-hover-background-color);
+      color: var(--card-hover-icon-color);
       transition: all 500ms ease;
     }
 
     .title {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 600;
       line-height: 24px;
       margin-bottom: .5rem;
@@ -46,13 +46,32 @@
       font-size: 32px;
 
       &:hover {
-        color: $dark-300;
+        color: var(--card-icon-hover-color);
       }
     }
 
     .stop-icon {
-      color: $dark-300;
+      color: var(--card-icon-color);
       font-size: 32px;
+
+      &:hover {
+        color: var(--card-icon-hover-color);
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-flow: column;
+
+      .bookmark-icon {
+        font-size: 24px;
+        margin: 0 auto 1.25rem auto;
+        width: min-content;
+
+        &:hover {
+          color: var(--card-icon-hover-color);
+        }
+      }
     }
   }
 }
@@ -60,9 +79,9 @@
 @media(min-width: $desktop-min-width) {
   .card {
     align-items: center;
-    background-color: $dark-200;
+    background-color: var(--card-background-color);
     border-radius: 1rem;
-    color: $dark-600;
+    color: var(--card-icon-color);
     cursor: pointer;
     display: flex;
     height: auto;
@@ -79,14 +98,14 @@
     }
 
     &:hover {
-      background-color: $dark-900;
-      color: $dark-400;
+      background-color: var(--card-hover-background-color);
+      color: var(--card-icon-hover-color);
       transition: all 500ms ease;
     }
 
     .title {
       display: flex;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 600;
       line-height: 24px;
       margin-bottom: .5rem;
@@ -107,13 +126,32 @@
       font-size: 32px;
 
       &:hover {
-        color: $dark-300;
+        color: var(--card-icon-hover-color);
       }
     }
 
     .stop-icon {
-      color: $dark-300;
+      color: var(--card-icon-color);
       font-size: 32px;
+
+      &:hover {
+        color: var(--card-icon-hover-color);
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-flow: column;
+
+      .bookmark-icon {
+        font-size: 24px;
+        margin: 0 auto 1.25rem auto;
+        width: min-content;
+
+        &:hover {
+          color: var(--card-icon-hover-color);
+        }
+      }
     }
   }
 }

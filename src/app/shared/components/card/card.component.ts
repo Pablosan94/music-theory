@@ -1,51 +1,73 @@
-import {Component, Input} from '@angular/core';
-import {ToneModel} from "@shared/models";
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {CardModel, ToneModel} from "@shared/models";
 import {ToneService} from "@shared/services/tone/tone.service";
 import {TagModel} from "@shared/models/tag.model";
+import {DashboardActions} from "../../../modules/dashboard/state/dashboard/actions";
+import {select, Store} from "@ngrx/store";
+import {getFavorites} from "../../../modules/dashboard/state/dashboard/selectors";
+import {Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
   @Input() title: string = 'Title';
   @Input() description: string = 'Description';
   @Input() tags: TagModel[];
   @Input() tone: ToneModel;
+  @Input() favorites: CardModel[];
+  @Input() showFavorite: boolean = false;
+  @Input() canSaveRecent: boolean = false;
 
-  constructor(private toneService: ToneService) {}
+  public isFavorite: boolean = false;
+  public card: CardModel;
 
-  play(): void {
+  constructor(private toneService: ToneService,
+              private store$: Store) {}
+
+  public ngOnInit(): void {
+    this.card = {
+      title: this.title,
+      description: this.description,
+      tone: this.tone,
+    }
+
+    this.favorites.map(favorite => {
+      if (favorite.title === this.card.title) {
+        this.isFavorite = true;
+      }
+    });
+  }
+
+  play(event: any): void {
+    event.stopPropagation();
+    if (this.canSaveRecent) {
+      this.store$.dispatch(DashboardActions.addMostRecent({ payload: this.card }));
+    }
+
     if (this.tone) {
       this.toneService.play(this.tone);
     }
   }
 
-  stop(): void {
+  stop(event: any): void {
+    event.stopPropagation();
     this.toneService.stop();
   }
 
-  /*playScale(): void {
-    if (this.tones && !this.isPlaying) {
-      let now = Tone.now();
-      const noteList = this.tones.split(',');
-      this.isPlaying = true;
-
-      noteList.forEach(note => {
-        this.sampler.triggerAttack(note, now);
-        this.sampler.triggerRelease(now + 0.1);
-        now += 0.2
-      });
-    }
-  }
-
-  stop(): void {
-    this.sampler.triggerRelease(Tone.now());
-    this.toggle();
-  }*/
-
   public isPlaying(): boolean {
     return this.toneService.isPlaying(this.tone);
+  }
+
+  public onFavoriteClick(): void {
+    this.isFavorite = true;
+    this.store$.dispatch(DashboardActions.addFavorite({ payload: this.card }));
+  }
+
+  public onUnfavoriteClick(): void {
+    this.isFavorite = false;
+    this.store$.dispatch(DashboardActions.removeFavorite({ payload: this.card }));
   }
 }

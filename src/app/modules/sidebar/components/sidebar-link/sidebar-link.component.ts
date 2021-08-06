@@ -1,6 +1,4 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
-
-import { MIN_DESKTOP_WIDTH } from '@shared/constants';
 import {isMobileWidth} from "@shared/utils/window.utils";
 
 @Component({
@@ -27,11 +25,17 @@ export class SidebarLinkComponent implements OnInit {
   }
 
   public onMouseOver(): void {
-    if (!this.isSidebarActive) {
+    if (!this.isSidebarActive && !this.isMobile) {
       this.tooltipStyle = {
         'opacity': '1',
         'transition': 'all 500ms ease',
         'top': '50%'
+      }
+    } else if (!this.isSidebarActive && this.isMobile) {
+      this.tooltipStyle = {
+        'opacity': '1',
+        'transition': 'all 500ms ease',
+        'top': '120%'
       }
     }
   }

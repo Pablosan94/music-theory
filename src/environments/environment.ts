@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  IS_LOCAL: true
+  IS_LOCAL: true,
+  MT_API: 'http://localhost:5000/api'
 };
 
 /*

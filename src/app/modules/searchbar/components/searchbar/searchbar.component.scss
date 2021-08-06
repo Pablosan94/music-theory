@@ -7,15 +7,15 @@
     margin: 1rem 1rem 0 1rem;
 
     .search_icon {
-      color: $dark-600;
+      color: var(--search-color);
       font-size: 24px;
       margin-left: 1rem;
       position: absolute;
     }
 
     .search_input {
-      background-color: $dark-200;
-      color: $dark-1000;
+      background-color: var(--search-background-color);
+      color: var(--search-color);
       border: none;
       border-radius: .5rem;
       font-size: 18px;
@@ -36,15 +36,15 @@
     width: 20%;
 
     .search_icon {
-      color: $dark-600;
+      color: var(--search-color);
       font-size: 24px;
       margin-left: 1rem;
       position: absolute;
     }
 
     .search_input {
-      background-color: $dark-200;
-      color: $dark-1000;
+      background-color: var(--search-background-color);
+      color: var(--search-color);
       border: none;
       border-radius: .5rem;
       font-size: 18px;
